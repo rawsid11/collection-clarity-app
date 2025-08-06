@@ -55,15 +55,15 @@ export default {
 				},
 				success: 'hsl(var(--success))',
 				warning: 'hsl(var(--warning))',
-				danger: 'hsl(var(--danger))',
-				info: 'hsl(var(--info))',
-				kpi: {
-					positive: 'hsl(var(--kpi-positive))',
-					negative: 'hsl(var(--kpi-negative))',
-					neutral: 'hsl(var(--kpi-neutral))',
-					'high-risk': 'hsl(var(--kpi-high-risk))',
-					'medium-risk': 'hsl(var(--kpi-medium-risk))',
-					'low-risk': 'hsl(var(--kpi-low-risk))'
+				portfolio: 'hsl(var(--portfolio))',
+				collection: 'hsl(var(--collection))',
+				prediction: 'hsl(var(--prediction))',
+				'accent-yellow': 'hsl(var(--accent-yellow))',
+				'accent-teal': 'hsl(var(--accent-teal))',
+				risk: {
+					high: 'hsl(var(--risk-high))',
+					medium: 'hsl(var(--risk-medium))',
+					low: 'hsl(var(--risk-low))'
 				},
 				chart: {
 					1: 'hsl(var(--chart-1))',
@@ -86,9 +86,9 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-success': 'var(--gradient-success)',
-				'gradient-warning': 'var(--gradient-warning)',
-				'gradient-danger': 'var(--gradient-danger)'
+				'gradient-warning': 'var(--gradient-warning)'
 			},
 			boxShadow: {
 				'kpi': 'var(--shadow-kpi)',
