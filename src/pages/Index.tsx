@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { TabsContent } from "@/components/ui/tabs";
-import NavigationTabs from "@/components/dashboard/NavigationTabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ExecutiveDashboard from "@/components/dashboard/ExecutiveDashboard";
 import ManagerDashboard from "@/components/dashboard/ManagerDashboard";
-import { BarChart3, Calendar, Filter } from "lucide-react";
+import { BarChart3, Calendar, Filter, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -42,20 +41,39 @@ const Index = () => {
           </div>
           
           <div className="mt-4">
-            <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+              <TabsList className="grid w-full grid-cols-2 lg:w-auto lg:grid-cols-2">
+                <TabsTrigger 
+                  value="executive" 
+                  className="flex items-center space-x-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  <BarChart3 className="h-4 w-4" />
+                  <span>Executive View</span>
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="manager" 
+                  className="flex items-center space-x-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  <Users className="h-4 w-4" />
+                  <span>Manager View</span>
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
         </div>
       </div>
 
       {/* Dashboard Content */}
       <div className="container mx-auto px-6 py-6">
-        <TabsContent value="executive" className={activeTab === "executive" ? "block" : "hidden"}>
-          <ExecutiveDashboard />
-        </TabsContent>
-        
-        <TabsContent value="manager" className={activeTab === "manager" ? "block" : "hidden"}>
-          <ManagerDashboard />
-        </TabsContent>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsContent value="executive">
+            <ExecutiveDashboard />
+          </TabsContent>
+          
+          <TabsContent value="manager">
+            <ManagerDashboard />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
