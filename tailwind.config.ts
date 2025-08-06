@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
+				danger: 'hsl(var(--danger))',
+				info: 'hsl(var(--info))',
+				kpi: {
+					positive: 'hsl(var(--kpi-positive))',
+					negative: 'hsl(var(--kpi-negative))',
+					neutral: 'hsl(var(--kpi-neutral))',
+					'high-risk': 'hsl(var(--kpi-high-risk))',
+					'medium-risk': 'hsl(var(--kpi-medium-risk))',
+					'low-risk': 'hsl(var(--kpi-low-risk))'
+				},
+				chart: {
+					1: 'hsl(var(--chart-1))',
+					2: 'hsl(var(--chart-2))',
+					3: 'hsl(var(--chart-3))',
+					4: 'hsl(var(--chart-4))',
+					5: 'hsl(var(--chart-5))',
+					6: 'hsl(var(--chart-6))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -62,6 +83,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-success': 'var(--gradient-success)',
+				'gradient-warning': 'var(--gradient-warning)',
+				'gradient-danger': 'var(--gradient-danger)'
+			},
+			boxShadow: {
+				'kpi': 'var(--shadow-kpi)',
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
