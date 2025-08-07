@@ -15,62 +15,62 @@
     --popover: 0 0% 100%;
     --popover-foreground: 280 100% 15%;
 
-    /* RN Insurance Brand Colors */
-    --primary: 338 93% 44%; /* #D60D47 Magenta */
+    /* Modern Professional Brand Colors */
+    --primary: 210 100% 56%; /* #0EA5E9 Sky Blue */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 338 93% 40%;
+    --primary-hover: 210 100% 50%;
 
-    --secondary: 280 100% 22%; /* #280071 Indigo */
+    --secondary: 217 91% 60%; /* #3B82F6 Blue */
     --secondary-foreground: 0 0% 100%;
 
-    --accent-yellow: 48 100% 50%; /* #FFC300 Yellow */
-    --accent-teal: 173 100% 33%; /* #00A896 Teal */
+    --accent-yellow: 45 93% 58%; /* #F59E0B Amber */
+    --accent-teal: 173 80% 40%; /* #14B8A6 Teal */
 
     --muted: 220 13% 95%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 173 100% 33%;
+    --accent: 173 80% 40%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --warning: 48 100% 50%;
-    --warning-foreground: 280 100% 15%;
+    --warning: 45 93% 58%;
+    --warning-foreground: 0 0% 100%;
 
-    --success: 173 100% 33%;
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 338 93% 44%;
+    --ring: 210 100% 56%;
 
     /* Insurance Specific Colors */
-    --portfolio: 338 93% 44%;
-    --collection: 173 100% 33%;
-    --risk-high: 0 84% 60%;
-    --risk-medium: 48 100% 50%;
-    --risk-low: 173 100% 33%;
-    --prediction: 280 100% 22%;
+    --portfolio: 210 100% 56%;
+    --collection: 173 80% 40%;
+    --risk-high: 0 72% 51%;
+    --risk-medium: 45 93% 58%;
+    --risk-low: 142 76% 36%;
+    --prediction: 217 91% 60%;
 
-    /* Chart Colors - Insurance Theme */
-    --chart-1: 338 93% 44%; /* Primary Magenta */
-    --chart-2: 173 100% 33%; /* Teal */
-    --chart-3: 48 100% 50%; /* Yellow */
-    --chart-4: 280 100% 22%; /* Indigo */
-    --chart-5: 338 93% 60%; /* Light Magenta */
-    --chart-6: 173 100% 45%; /* Light Teal */
+    /* Chart Colors - Modern Professional Theme */
+    --chart-1: 210 100% 56%; /* Sky Blue */
+    --chart-2: 173 80% 40%; /* Teal */
+    --chart-3: 45 93% 58%; /* Amber */
+    --chart-4: 217 91% 60%; /* Blue */
+    --chart-5: 210 100% 70%; /* Light Sky Blue */
+    --chart-6: 173 80% 55%; /* Light Teal */
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(338 93% 44%), hsl(338 93% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280 100% 22%), hsl(280 100% 35%));
-    --gradient-success: linear-gradient(135deg, hsl(173 100% 33%), hsl(173 100% 45%));
-    --gradient-warning: linear-gradient(135deg, hsl(48 100% 50%), hsl(48 100% 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 75%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 50%));
+    --gradient-warning: linear-gradient(135deg, hsl(45 93% 58%), hsl(45 93% 72%));
 
     /* Shadows */
-    --shadow-kpi: 0 4px 12px -2px hsl(338 93% 44% / 0.1);
-    --shadow-card: 0 2px 8px -2px hsl(280 100% 22% / 0.08);
-    --shadow-elevated: 0 8px 24px -4px hsl(338 93% 44% / 0.15);
+    --shadow-kpi: 0 4px 12px -2px hsl(210 100% 56% / 0.1);
+    --shadow-card: 0 2px 8px -2px hsl(217 91% 60% / 0.08);
+    --shadow-elevated: 0 8px 24px -4px hsl(210 100% 56% / 0.15);
 
     --radius: 0.5rem;
 
