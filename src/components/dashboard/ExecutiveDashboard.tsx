@@ -3,9 +3,31 @@ import KPICard from "./KPICard";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, ComposedChart, Area, AreaChart } from "recharts";
 import { Building2, Users, AlertTriangle, TrendingUp, DollarSign, Target, Percent, Shield } from "lucide-react";
 import { kpiCalculator } from "@/data/insuranceData";
+import HeatMap from "./HeatMap";
+import TrendForecast from "./TrendForecast";
+import DrillDownChart from "./DrillDownChart";
+import RadarComparison from "./RadarComparison";
+import AdvancedFilters from "./AdvancedFilters";
+import { useState } from "react";
 
 // Comprehensive Executive Dashboard with all 80 KPIs
 const ExecutiveDashboard = () => {
+  const [filters, setFilters] = useState<any>({});
+
+  // Filter options for multi-dimensional filtering
+  const filterOptions = {
+    regions: ['Chennai', 'Mumbai', 'Delhi'],
+    channels: ['SBI', 'RETAIL'],
+    products: ['ULIP-A', 'ULIP-B', 'Term-A', 'Term-B', 'Endowment-A', 'Endowment-B'],
+    branches: [
+      'Chennai-1', 'Chennai-2', 'Chennai-3', 'Mumbai-1', 'Mumbai-2', 'Delhi-1', 'Delhi-2'
+    ]
+  };
+
+  const handleExport = (format: 'pdf' | 'excel') => {
+    console.log(`Exporting dashboard as ${format}`);
+    // Implementation would go here
+  };
   // Portfolio & Volume KPIs (1-10)
   const totalPortfolio = kpiCalculator.getTotalPortfolio();
   const totalBranches = kpiCalculator.getTotalBranches();
@@ -79,8 +101,99 @@ const ExecutiveDashboard = () => {
     { segment: 'Remaining Branches', percentage: 25, amount: totalPortfolio * 0.25 / 1000 }
   ];
 
+  // Advanced visualization data
+  const heatMapData = [
+    // Branch vs Product performance matrix
+    { row: 'Chennai-1', col: 'ULIP-A', value: 96.2 },
+    { row: 'Chennai-1', col: 'ULIP-B', value: 94.1 },
+    { row: 'Chennai-1', col: 'Term-A', value: 92.8 },
+    { row: 'Chennai-1', col: 'Term-B', value: 95.3 },
+    { row: 'Chennai-1', col: 'Endowment-A', value: 97.1 },
+    { row: 'Chennai-1', col: 'Endowment-B', value: 93.7 },
+    { row: 'Mumbai-1', col: 'ULIP-A', value: 93.8 },
+    { row: 'Mumbai-1', col: 'ULIP-B', value: 95.2 },
+    { row: 'Mumbai-1', col: 'Term-A', value: 94.6 },
+    { row: 'Mumbai-1', col: 'Term-B', value: 91.9 },
+    { row: 'Mumbai-1', col: 'Endowment-A', value: 96.4 },
+    { row: 'Mumbai-1', col: 'Endowment-B', value: 94.8 },
+    { row: 'Delhi-1', col: 'ULIP-A', value: 95.1 },
+    { row: 'Delhi-1', col: 'ULIP-B', value: 92.3 },
+    { row: 'Delhi-1', col: 'Term-A', value: 96.7 },
+    { row: 'Delhi-1', col: 'Term-B', value: 94.5 },
+    { row: 'Delhi-1', col: 'Endowment-A', value: 93.2 },
+    { row: 'Delhi-1', col: 'Endowment-B', value: 95.8 }
+  ];
+
+  const trendForecastData = [
+    { period: 'Feb 25', actual: 94.2, isHistorical: true },
+    { period: 'Mar 25', actual: 94.8, isHistorical: true },
+    { period: 'Apr 25', actual: 95.1, isHistorical: true },
+    { period: 'May 25', actual: 94.7, isHistorical: true },
+    { period: 'Jun 25', actual: 95.3, isHistorical: true },
+    { period: 'Jul 25', forecast: 95.8, confidence: 87, isHistorical: false },
+    { period: 'Aug 25', forecast: 96.2, confidence: 82, isHistorical: false },
+    { period: 'Sep 25', forecast: 96.5, confidence: 78, isHistorical: false }
+  ];
+
+  const drillDownData = [
+    {
+      name: 'Chennai',
+      value: 285000000,
+      collectionRate: 95.2,
+      children: [
+        { name: 'Chennai-1', value: 95000000, collectionRate: 96.1, children: [
+          { name: 'ULIP-A', value: 25000000, collectionRate: 96.2 },
+          { name: 'Term-A', value: 35000000, collectionRate: 92.8 },
+          { name: 'Endowment-A', value: 35000000, collectionRate: 97.1 }
+        ]},
+        { name: 'Chennai-2', value: 90000000, collectionRate: 94.8 },
+        { name: 'Chennai-3', value: 100000000, collectionRate: 94.7 }
+      ]
+    },
+    {
+      name: 'Mumbai',
+      value: 320000000,
+      collectionRate: 94.8,
+      children: [
+        { name: 'Mumbai-1', value: 110000000, collectionRate: 94.8 },
+        { name: 'Mumbai-2', value: 110000000, collectionRate: 94.5 },
+        { name: 'Mumbai-3', value: 100000000, collectionRate: 95.1 }
+      ]
+    },
+    {
+      name: 'Delhi',
+      value: 195000000,
+      collectionRate: 94.5,
+      children: [
+        { name: 'Delhi-1', value: 95000000, collectionRate: 94.8 },
+        { name: 'Delhi-2', value: 100000000, collectionRate: 94.2 }
+      ]
+    }
+  ];
+
+  const radarEntities = [
+    { id: 'chennai', name: 'Chennai', color: 'hsl(var(--chart-1))' },
+    { id: 'mumbai', name: 'Mumbai', color: 'hsl(var(--chart-2))' },
+    { id: 'delhi', name: 'Delhi', color: 'hsl(var(--chart-3))' }
+  ];
+
+  const radarData = [
+    { metric: 'Collection Rate', entity1: 95.2, entity2: 94.8, fullMark: 100 },
+    { metric: 'Portfolio Growth', entity1: 87, entity2: 92, fullMark: 100 },
+    { metric: 'Branch Efficiency', entity1: 89, entity2: 85, fullMark: 100 },
+    { metric: 'Risk Management', entity1: 91, entity2: 88, fullMark: 100 },
+    { metric: 'Customer Satisfaction', entity1: 93, entity2: 90, fullMark: 100 },
+    { metric: 'Digital Adoption', entity1: 78, entity2: 85, fullMark: 100 }
+  ];
+
   return (
     <div className="space-y-8">
+      {/* Advanced Filters */}
+      <AdvancedFilters 
+        options={filterOptions} 
+        onFiltersChange={setFilters}
+        onExport={handleExport}
+      />
       {/* Primary Portfolio KPIs - Row 1 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <KPICard
@@ -435,6 +548,44 @@ const ExecutiveDashboard = () => {
           value={`${(totalBranches * 6 * 6).toLocaleString()}`}
           subtitle="Total active policies"
           size="sm"
+        />
+      </div>
+
+      {/* Advanced Visualizations */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Heat Map */}
+        <HeatMap
+          title="Branch vs Product Performance Matrix"
+          data={heatMapData}
+          rowLabel="Branches"
+          colLabel="Products"
+          onCellClick={(row, col) => console.log('Navigate to:', row, col)}
+        />
+
+        {/* Trend Forecast */}
+        <TrendForecast
+          title="Collection Rate Forecast"
+          data={trendForecastData}
+          metric="Collection Rate"
+          forecastPeriods={3}
+        />
+      </div>
+
+      {/* Drill-down and Radar */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Drill Down Chart */}
+        <DrillDownChart
+          title="Portfolio Drill-Down Analysis"
+          data={drillDownData}
+          levels={['Region', 'Branch', 'Product']}
+        />
+
+        {/* Radar Comparison */}
+        <RadarComparison
+          title="Regional Performance Comparison"
+          data={radarData}
+          entities={radarEntities}
+          onEntityChange={(e1, e2) => console.log('Compare:', e1, 'vs', e2)}
         />
       </div>
     </div>
