@@ -15,62 +15,62 @@
     --popover: 0 0% 100%;
     --popover-foreground: 280 100% 15%;
 
-    /* Modern Professional Brand Colors */
-    --primary: 210 100% 56%; /* #0EA5E9 Sky Blue */
+    /* Sophisticated Emerald & Gold Theme */
+    --primary: 158 64% 52%; /* #16A085 Emerald */
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 210 100% 50%;
+    --primary-hover: 158 64% 45%;
 
-    --secondary: 217 91% 60%; /* #3B82F6 Blue */
+    --secondary: 160 100% 25%; /* #00695C Dark Teal */
     --secondary-foreground: 0 0% 100%;
 
-    --accent-yellow: 45 93% 58%; /* #F59E0B Amber */
-    --accent-teal: 173 80% 40%; /* #14B8A6 Teal */
+    --accent-yellow: 43 96% 56%; /* #F1C40F Gold */
+    --accent-teal: 174 72% 56%; /* #26D0CE Bright Teal */
 
     --muted: 220 13% 95%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 173 80% 40%;
+    --accent: 174 72% 56%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 348 83% 47%;
     --destructive-foreground: 0 0% 100%;
 
-    --warning: 45 93% 58%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 160 100% 25%;
 
-    --success: 142 76% 36%;
+    --success: 134 61% 41%;
     --success-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 210 100% 56%;
+    --ring: 158 64% 52%;
 
     /* Insurance Specific Colors */
-    --portfolio: 210 100% 56%;
-    --collection: 173 80% 40%;
-    --risk-high: 0 72% 51%;
-    --risk-medium: 45 93% 58%;
-    --risk-low: 142 76% 36%;
-    --prediction: 217 91% 60%;
+    --portfolio: 158 64% 52%;
+    --collection: 174 72% 56%;
+    --risk-high: 348 83% 47%;
+    --risk-medium: 43 96% 56%;
+    --risk-low: 134 61% 41%;
+    --prediction: 160 100% 25%;
 
-    /* Chart Colors - Modern Professional Theme */
-    --chart-1: 210 100% 56%; /* Sky Blue */
-    --chart-2: 173 80% 40%; /* Teal */
-    --chart-3: 45 93% 58%; /* Amber */
-    --chart-4: 217 91% 60%; /* Blue */
-    --chart-5: 210 100% 70%; /* Light Sky Blue */
-    --chart-6: 173 80% 55%; /* Light Teal */
+    /* Chart Colors - Emerald & Gold Theme */
+    --chart-1: 158 64% 52%; /* Emerald */
+    --chart-2: 43 96% 56%; /* Gold */
+    --chart-3: 174 72% 56%; /* Bright Teal */
+    --chart-4: 160 100% 25%; /* Dark Teal */
+    --chart-5: 158 64% 65%; /* Light Emerald */
+    --chart-6: 43 96% 70%; /* Light Gold */
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 75%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 50%));
-    --gradient-warning: linear-gradient(135deg, hsl(45 93% 58%), hsl(45 93% 72%));
+    --gradient-primary: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160 100% 25%), hsl(160 100% 35%));
+    --gradient-success: linear-gradient(135deg, hsl(134 61% 41%), hsl(134 61% 55%));
+    --gradient-warning: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 70%));
 
     /* Shadows */
-    --shadow-kpi: 0 4px 12px -2px hsl(210 100% 56% / 0.1);
-    --shadow-card: 0 2px 8px -2px hsl(217 91% 60% / 0.08);
-    --shadow-elevated: 0 8px 24px -4px hsl(210 100% 56% / 0.15);
+    --shadow-kpi: 0 4px 12px -2px hsl(158 64% 52% / 0.1);
+    --shadow-card: 0 2px 8px -2px hsl(160 100% 25% / 0.08);
+    --shadow-elevated: 0 8px 24px -4px hsl(158 64% 52% / 0.15);
 
     --radius: 0.5rem;
 
